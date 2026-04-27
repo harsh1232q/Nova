@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="contact">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="bg1-video">
+        <source src="Images/contact.mp4" type="video/mp4">
+    </video>
+
+
+
+
+
+
+    <!-- Glow Effects -->
+    <div class="glow-sphere sphere-1"></div>
+    <div class="glow-sphere sphere-2"></div>
+    <div class="glow-sphere sphere-3"></div>
+
+
+
+
+
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="Images/logo.png" class="logo" alt="Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+    <!-- Header -->
+    <section class="contact-header">
+        <h1><span class=neon>Contact Us</span></h1>
+        <p>Any questions or feedback? We’d love to hear from you!</p>
+    </section>
+
+
+
+
+
+<!-- Contact Section -->
+<main class="main-container">
+    <div class="glass-card">
+
+        <!-- Left side Info -->
+        <div class="info-side">
+            <h2>Contact Information</h2>
+
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <p>+61 400 123 456</p>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <p>support@nova.com.au</p>
+            </div>
+
+            <div class="info-block">
+                <h3>Office Location</h3>
+                <p>1 George Street,<br>Sydney NSW 2000, Australia</p>
+            </div>
+
+            <div class="info-block">
+                <h3>Shipping Address</h3>
+                <p>15 Market Street,<br>Sydney NSW 2000, Australia</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+
+            <!-- Right side Form -->
+            <div class="form-side">
+                <form id="contactForm">
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>First Name</label>
+                            <input type="text" required placeholder="John">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Last Name</label>
+                            <input type="text" required placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" required placeholder="john@email.com">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+61 400 123 456">
+                        </div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="subject-section">
+                        <label>Select Subject?</label>
+
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="subject" value="general" checked>
+                                General Inquiry
+                            </label>
+
+                            <label>
+                                <input type="radio" name="subject" value="brand">
+                                Order & Product Support
+                            </label>
+
+                            <label>
+                                <input type="radio" name="subject" value="uiux">
+                                Website Feedback
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="input-group full-width">
+                        <label>Message</label>
+                        <textarea placeholder="Write your message..." required></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="btn-container">
+                        <button type="submit" class="send-btn">Send Message</button>
+                        <div id="formStatus"></div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+
+
+<!-- Help Section -->
+<div class="difference">
+
+    <h2>How Can We <span class="neon">Help</span> You?</h2>
+
+</div>
+
+<div class="stats">
+
+    <div class="card">
+        <div class="icon">📦</div>
+        <h2>Order Support</h2>
+        <p>Get help with your orders, tracking, delivery updates, and purchase issues.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🛍️</div>
+        <h2>Product Information</h2>
+        <p>Learn more about product details, features, and specifications before purchasing.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">⚙️</div>
+        <h2>Website Assistance</h2>
+        <p>Support for browsing, account issues, and feedback to improve your experience.</p>
+    </div>
+
+</div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2026 Project Nova — Tomorrow Starts Here
+    </footer>
+
+
+
+
+
+
+    <!-- JS for the button -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                formStatus.style.color = '#82047e';
+                formStatus.textContent = 'Submitting your message...';
+
+                setTimeout(() => {
+                    const now = new Date();
+                    const options = {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        timeZone: 'Australia/Sydney',
+                        timeZoneName: 'short'
+                    };
+
+                    const submissionTime = now.toLocaleString('en-US', options);
+
+                    formStatus.innerHTML = `
+                        <div style="font-size: 1.2rem;">✅ Sent Successfully</div>
+                        <span style="font-size: 0.7rem; opacity: 0.7;">
+                            Submitted: ${submissionTime}
+                        </span>
+                    `;
+
+                    form.reset();
+
+                    setTimeout(() => {
+                        formStatus.innerHTML = '';
+                    }, 6000);
+
+                }, 2000);
+            });
+        });
+    </script>
+
+</body>
+</html>

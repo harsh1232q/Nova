@@ -1,0 +1,1460 @@
+/* =========================
+   INDEX CSS CODE
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Font section */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+/* Banner section */
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Video background section */
+.video-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.bgVideo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.bgVideo.active{
+    opacity: 1;
+}
+
+/* Video background colour */
+.banner::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+/* Navbar section*/
+.navbar{
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+/* Logo part*/
+.logo{
+    width: 200px;
+}
+
+/* Still navbar part */
+.navbar ul{
+    margin-left: auto;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 25px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Animated in the navigation section*/
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #82047e;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+/* Content section */
+.content{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.content h1{
+    font-size: 70px;
+}
+
+.content p{
+    margin: 20px auto;
+}
+
+/* Button section */
+.button{
+    width: 200px;
+    padding: 15px;
+    border-radius: 50px;
+    border: 2px solid #82047e;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.button span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #82047e;
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+.button:hover span{
+    width: 100%;
+}
+
+/* Animated section for the h1 */
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(40px, 8vw, 160px);
+    white-space: nowrap;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    background-image: linear-gradient(#fff, #fff);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: -1000px 0;
+    animation: backcolor 4s linear infinite alternate;
+}
+
+@keyframes backcolor {
+    0% { background-position: -1000px 0; }
+    40% { background-position: 0 0; }   
+    60% { background-position: 0 0; }   
+    100% { background-position: -1000px 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   ABOUT CSS CODE
+========================= */
+
+/* About page video background */
+.about{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* background video */
+.bg-video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* BG video handling section */
+.about::after{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+}
+
+/* About nova content section*/
+.about-content{
+    position: relative;
+    margin: 120px auto;
+    width: 70%;
+    text-align: center;
+    color: white;
+}
+
+.about-content h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-content p{
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+/* Neon section for the texts*/
+.neon {
+    color: #c94cc9;
+    text-shadow:
+        0 0 4px rgba(130, 4, 126, 0.55),
+        0 0 10px rgba(130, 4, 126, 0.35),
+        0 0 18px rgba(130, 4, 126, 0.2);
+}
+
+/* Making the three boxes section in a row */
+.stats{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 35px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* The code for handling the structure of the boxes*/
+.card{
+    width: 360px;
+    min-height: 200px;
+
+    background: #131317; 
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 15px;
+
+    color: white;
+    padding: 30px;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect of the boxes */
+.card:hover{
+    transform: translateY(-8px);
+    background: #27272b; 
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+}
+
+/* Click effect on the card */
+.card:active{
+    background: #1F1F24; 
+    transform: scale(0.97);
+}
+
+/* Icon handling section */
+.card .icon{
+    font-size: 38px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+
+/* Title inside the card section*/
+.card h2{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+
+/* Texts inside the card section */
+.card p{
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.7;
+}
+
+/* Making the card responsive section */
+@media (max-width: 900px){
+    .stats{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*Section regards to Different*/
+.difference{
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+}
+
+.difference h2{
+    font-size: 34px;
+    font-weight: 700;
+}
+
+/* Values section */
+.values-section{
+    background: rgba(120, 116, 116, 0.35); 
+
+    width: 100%;
+    padding: 100px 20px;
+
+    color: white;
+    text-align: center;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* heading */
+.values-section h2{
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+/* intro text */
+.values-intro{
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+}
+
+/* bottom row layout like the three texts ina row in the values content */
+.values-row{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+/* each column in the box */
+.value-item{
+    width: 260px;
+    text-align: center;
+}
+
+.value-item h3{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.value-item p{
+    font-size: 14px;
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+/* Footer section*/
+.footer{
+    text-align: center;
+    color: white;
+    opacity: 0.6;
+
+    padding: 40px 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   CONTACT CSS CODE
+========================= */
+
+/* bG Video section*/
+.bg1-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.3;
+}
+
+:root {
+    --glass: rgba(255, 255, 255, 0.1);
+    --neon-blue: #00f2ff;
+    --dark-bg: #0a0a0c;
+}
+
+body.contact {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Contact us text margin gap thing*/
+.contact-header {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.contact-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* What makes us different text margin gap section */
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+/* Glass card handling section */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    display: flex;
+    width: 1000px;
+    overflow: hidden;
+}
+
+/* Left side info handling of the glass card */
+.info-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.info-side h2 {
+    font-size: 1.8rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-item i {
+    color: #82047e;
+}
+    
+.info-block h3 {
+    color: #82047e;
+    font-size: 1rem;
+}
+
+/* Right side form handling of the glass card*/
+.form-side {
+    flex: 1.5;
+    padding: 40px;
+}
+
+/* input rows */
+.input-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* labels */
+.input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+/* Input section inside the glass card*/
+.input-group input,
+.input-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    color: white;              
+    padding: 10px 0;
+    outline: none;
+    font-size: 14px;
+}
+
+/* placeholder text */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #888;
+}
+
+/* focus effect */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-bottom-color: #82047e;
+}
+
+/* Message box handling width */
+.full-width {
+    width: 100%;
+}
+
+/*radio button section of the glass card*/
+.subject-section {
+    margin-bottom: 20px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* Send button section of the glass card */
+.send-btn {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    float: right;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #82047e;
+    color: black;
+}
+
+/* status text */
+#formStatus {
+    margin-top: 10px;
+    text-align: left;   
+    font-size: 0.85rem;
+    margin-left: 5px;   
+}
+
+.social-icons a {
+    color: #82047e;
+}
+
+input[type="radio"] {
+    accent-color: #82047e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   SHOP CSS CODE
+========================= */
+
+/* Whole page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: rgba(0, 0, 0, 0.95); 
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Logo */
+.logo {
+    height: 40px;
+}
+
+/* Navbar*/
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+/* Navbar links*/
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+/* navabr animation click */
+.navbar ul li a:hover {
+    color: #82047e;
+}
+
+/* Navigation text active white ::-moz-selection */
+.navbar ul li a.active {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+/* Section below navbar info */
+.shop-hero {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+
+/* Video for the section and the text appears when the video plays*/
+.shop-hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+/* force text above video */
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-overlay h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.hero-overlay h1 span {
+    color: #82047e;
+}
+
+.hero-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/*Layout of the left side of the section */
+.shop-layout {
+    display: flex;
+    padding: 0;
+    gap: 0;
+}
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: #e5e5e5; 
+    padding: 40px 25px;
+    border-right: 1px solid #d0d0d0;
+    min-height: 100vh;
+}
+
+/* Search */
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Filters */
+.filter-section h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #82047e;
+    margin: 30px 0 10px 0;
+    text-transform: uppercase;
+}
+
+.filter-section button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 8px 0;
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-section button.active {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Product display section */
+.product-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #eeeeee;
+    gap: 1px;
+    border: 1px solid #eeeeee;
+    padding: 40px;
+}
+
+.product-card {
+    background: #ffffff;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.product-card:hover {
+    background: #fafafa;
+}
+
+/* Images of the product */
+.product-card-image-wrapper {
+    height: 160px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    max-width: 65%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+/* Texts of the product*/
+.product-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-description {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 15px;
+    min-height: 36px;
+}
+
+.product-price {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* Buttons in the card */
+.btn-group {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.stock-btn, .cart-btn {
+    flex: 1;
+    padding: 12px 5px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1.5px solid #000;
+    transition: all 0.2s ease;
+}
+
+.stock-btn {
+    background: #fff;
+}
+
+.cart-btn {
+    background: #82047e;
+    color: #fff;
+}
+
+.cart-btn.remove {
+    background: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+/* Cart section add mini count on the navbar */
+#cart-count {
+    background: #82047e;
+    color: white;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+/* Making the count responsive and the layyouts of the side bar and the shop product */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+
+.product-category {
+    font-size: 11px;
+    color: #82047e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: #c94cc9;
+    text-shadow:
+        0 0 4px rgba(130, 4, 126, 0.55),
+        0 0 10px rgba(130, 4, 126, 0.35),
+        0 0 18px rgba(130, 4, 126, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   CART CSS CODE
+========================= */
+
+/* Whole page*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+}
+
+/* Navbar section */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Checkout step section */
+.checkout-steps {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 30px 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.step {
+    text-decoration: none;
+    color: #999;
+    transition: 0.3s;
+}
+
+.step.active {
+    color: #82047e;
+    font-weight: 700;
+}
+
+.step:hover {
+    color: #333;
+}
+
+.step-divider {
+    color: #ccc;
+}
+
+/*Layout section of the left side of cart*/
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.cart-content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.cart-main {
+    flex: 2;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Table in the category for the cart to see the product chose*/
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table thead {
+    background: #82047e;
+    color: #fff;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* Quantity Box  in the cart */
+.qty-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+}
+
+/*  Remove Button for removing product */
+.remove-link {
+    color: #ff4d4d;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Sidebar Summary card section */
+.cart-summary {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 100px;
+}
+
+.cart-summary h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+/*  Buttons for next stage */
+.checkout-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #333;
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+}
+
+/* cart and summary card section resposive section */
+@media (max-width: 900px) {
+    .cart-content-wrapper {
+        flex-direction: column;
+    }
+
+    .cart-summary {
+        width: 100%;
+        position: static;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   SHIPPING CSS CODE
+========================= */
+
+/* Shipping Form Styles */
+.shipping-form-container {
+    padding: 30px !important;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* FORM GRID */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* input section in the form */
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fafafa;
+    outline: none;
+
+    color: #000000; /* ✅ text typed by user */
+}
+
+.form-group input::placeholder {
+    color: #888888; /* light grey instead of white */
+}
+
+.form-group input:focus {
+    border-color: #82047e;
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Shipping Methods section */
+.shipping-methods {
+    display: flex;
+    gap: 20px;
+}
+
+.method-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.method-card:has(input:checked) {
+    border-color: #000;
+    background: #fdfdfd;
+}
+
+.method-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.method-info strong {
+    font-size: 14px;
+    color: #000000;
+}
+
+.method-info span {
+    font-size: 12px;
+    color: #777;
+}
+
+.method-price {
+    font-weight: 700;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   PAYMENT CSS CODE
+========================= */
+
+/* card section for the card */
+.card-only-container {
+    padding: 40px !important;
+    max-width: 600px;
+}
+
+/* input section in the card form */
+.black-text-input {
+    color: #000000 !important;
+    background: #ffffff !important;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Card section visual box */
+.card-visual-box {
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+
+    background: #fcfcfc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* Email section*/
+.payment-email-group {
+    margin-top: 20px;
+}
+
+/* Payment buttons section */
+.payment-trigger {
+    width: 100% !important;
+    margin-top: 20px;
+
+    border: 2px solid #82047e !important;
+    background: #000000 !important;
+
+    border-radius: 50px !important;
+    height: 55px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Animated section for the button */
+.payment-trigger span {
+    background: #82047e !important;
+}
+
+/* Hover effect for button */
+.payment-trigger:hover {
+    background: #111111 !important;
+}
+
+/* Successful payment display section */
+.success-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(255,255,255,0.95);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+/* Success card full section */
+.success-card {
+    text-align: center;
+}
+
+/* tickmark agree section */
+.checkmark-circle {
+    font-size: 60px;
+    color: #82047e;
+    margin-bottom: 10px;
+}
+
+/* time text in the success card */
+.timestamp {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="cart-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="Images/logo.png" class="logo" alt="Nova Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <!-- section below the image texts to different steps for the buying-->
+    <main class="checkout-container">
+        <nav class="checkout-steps">
+            <a href="cart.html" class="step">Cart</a>
+            <span class="step-divider">›</span>
+            <a href="shipping.html" class="step active">Shipping</a>
+            <span class="step-divider">›</span>
+            <span class="step disabled">Payment</span>
+        </nav>
+
+
+
+
+
+    <!-- Form section-->
+        <div class="cart-content-wrapper">
+            <div class="cart-main shipping-form-container">
+                <h2 class="section-title">Shipping Address</h2>
+                <form id="shipping-form" class="checkout-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>First Name*</label>
+                            <input type="text" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name*</label>
+                            <input type="text" placeholder="Doe" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Email*</label>
+                            <input type="email" placeholder="john@gmail.com" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Phone number*</label>
+                            <input type="tel" placeholder="+61 412 345 678" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Street Address*</label>
+                            <input type="text" placeholder="12 George St, Apartment 5" required>
+                        </div>
+                        <div class="form-group">
+                            <label>City*</label>
+                            <input type="text" placeholder="Sydney" required>
+                        </div>
+                        <div class="form-group">
+                            <label>State*</label>
+                            <input type="text" placeholder="NSW" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Postcode*</label>
+                            <input type="text" placeholder="2000" required>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title" style="margin-top: 40px;">Shipping Method</h2>
+                    <div class="shipping-methods">
+                        <label class="method-card">
+                            <input type="radio" name="method" value="0" checked>
+                            <div class="method-info">
+                                <strong>Free Shipping</strong>
+                                <span>7-20 Days</span>
+                            </div>
+                            <span class="method-price">$0</span>
+                        </label>
+                        <label class="method-card">
+                            <input type="radio" name="method" value="9">
+                            <div class="method-info">
+                                <strong>Express Shipping</strong>
+                                <span>1-3 Days</span>
+                            </div>
+                            <span class="method-price">$9</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+
+    <!-- Order summmary-->
+            <aside class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="shipping-cost">Calculated at next step</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total Amount</span>
+                    <span id="grand-total">$0.00</span>
+                </div>
+                <button type="submit" form="shipping-form" class="checkout-btn">Continue to Payment</button>
+                <a href="shop.html" class="continue-shopping">← Back to Shop</a>
+            </aside>
+        </div>
+    </main>
+
+
+
+
+
+    <!-- JS for the shipping-->
+    <script src="JS/shipping.js"></script>
+</body>
+</html>

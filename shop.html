@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="shop">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="Images/logo.png" class="logo" alt="Nova Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html" class="active">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="cart-link">
+                    Cart <span id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+    <!-- Background Video and info below navbar -->
+    <header class="shop-hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Images/shop.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <h1>NOVA <span class=neon>COLLECTION</span></h1>
+            <p>Explore a curated range of modern technology built for performance, simplicity, and everyday innovation.</p>
+        </div>
+    </header>
+
+
+
+
+
+
+       <!-- Left side section of the shop where u can search and filter -->
+    <div class="shop-layout">
+        <aside class="sidebar">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search products...">
+            </div>
+
+            <div class="filter-section">
+                <h4>SORT BY</h4>
+                <button class="sort active" data-sort="default">Default</button>
+                <button class="sort" data-sort="low-to-high">Price: Low to High</button>
+                <button class="sort" data-sort="high-to-low">Price: High to Low</button>
+            </div>
+
+            <div class="filter-section">
+                <h4>CATEGORIES</h4>
+                <button class="filter active" data-filter="all">All Items</button>
+                <button class="filter" data-filter="Smartphone">Smartphones</button>
+                <button class="filter" data-filter="Laptop">Laptops</button>
+                <button class="filter" data-filter="Earbuds">Earbuds</button>
+                <button class="filter" data-filter="Watches">Watches</button>
+                <button class="filter" data-filter="Ipads">Ipads</button>
+            </div>
+        </aside>
+
+        <main class="product-grid" id="product-list">
+            </main>
+    </div>
+
+
+
+
+
+
+       <!-- Link to JS -->
+    <script src="JS/shop.js"></script>
+</body>
+</html>

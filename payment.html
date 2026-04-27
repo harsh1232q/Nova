@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="cart-page">
+
+    <!-- TY payment-->
+    <div id="paymentSuccessOverlay" class="success-overlay">
+        <div class="success-card">
+            <div class="checkmark-circle">✅</div>
+            <h2>Order Placed, Thank you!</h2>
+            <p id="confirmationEmailText">Confirmation will be sent to your email.</p>
+            <div id="submissionTimestamp" class="timestamp"></div>
+            <p class="redirect-note">Redirecting to homepage in 5 seconds...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="Images/logo.png" class="logo" alt="Nova Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- checkout steps -->
+    <main class="checkout-container">
+        <nav class="checkout-steps">
+            <a href="cart.html" class="step">Cart</a>
+            <span class="step-divider">›</span>
+            <a href="shipping.html" class="step">Shipping</a>
+            <span class="step-divider">›</span>
+            <span class="step active">Payment</span>
+        </nav>
+
+        <div class="cart-content-wrapper">
+
+            <!-- Payment form -->
+            <div class="cart-main card-only-container">
+                <form id="finalPaymentForm">
+
+                    <h2 class="section-title">Card information</h2>
+                    <p class="section-subtitle">Indicate details of the card from which money will be debited</p>
+
+                    <div class="card-visual-box">
+
+                        <div class="visa-master-logos">
+                            <span>VISA</span> <span style="margin-left:10px;">🔴🟠</span>
+                        </div>
+
+                        <!-- Card number section -->
+                        <div class="form-group full-width">
+                            <label>Card number</label>
+                            <input type="text"
+                                   placeholder="0000 0000 0000 0000"
+                                   maxlength="19"
+                                   pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}"
+                                   required
+                                   class="black-text-input"
+                                   oninput="this.value = this.value
+                                       .replace(/\D/g,'')
+                                       .replace(/(.{4})/g,'$1 ')
+                                       .trim()">
+                        </div>
+
+                        <!-- Name on card section -->
+                        <div class="form-group full-width">
+                            <label>Name on card</label>
+                            <input type="text"
+                                   placeholder="John Smith"
+                                   required
+                                   class="black-text-input">
+                        </div>
+
+                        <!-- expiry and cvv -->
+                        <div class="form-row-split">
+
+                            <!-- EXPIRY DATE -->
+                            <div class="form-group">
+                                <label>Expiry date</label>
+                                <input type="month"
+                                       required
+                                       class="black-text-input">
+                            </div>
+
+                            <!-- CVV -->
+                            <div class="form-group">
+                                <label>CVV code</label>
+                                <input type="password"
+                                       placeholder="•••"
+                                       maxlength="4"
+                                       pattern="\d{3,4}"
+                                       required
+                                       class="black-text-input">
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- order summary card section -->
+            <aside class="cart-summary">
+
+                <h3>Order Summary</h3>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="shipping-cost">$0.00</span>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total Amount</span>
+                    <span id="grand-total">$0.00</span>
+                </div>
+
+                <div class="payment-email-group">
+                    <label style="font-size: 12px; font-weight: 600;">Email for Receipt</label>
+                    <input type="email"
+                           id="pay-email"
+                           placeholder="john@example.com"
+                           required
+                           class="black-text-input"
+                           style="width: 100%; padding: 10px; margin-top: 5px;">
+                </div>
+
+                <div class="terms-box">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="agreeTerms" required>
+                        I agree to pay the total amount and authorize this transaction.
+                    </label>
+                </div>
+
+                <button type="submit" form="finalPaymentForm" class="button payment-trigger">
+                    <strong>Pay</strong>
+                    <span></span>
+                </button>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- JS code in payment -->
+    <script src="JS/payment.js"></script>
+
+</body>
+</html>

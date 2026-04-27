@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="banner">
+
+    <!-- Video Background section-->
+    <div class="video-container">
+        <video class="bgVideo active" autoplay muted></video>
+        <video class="bgVideo" autoplay muted></video>
+    </div>
+
+
+
+
+
+    <!-- Navbar section on the top-->
+    <div class="navbar">
+        <img src="Images/logo.png" class="logo" alt="Logo">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+
+
+
+  <!-- Information seciton in the homepage -->
+<div class="content">
+    <h1 class="title">Nova — Born for What’s Next</h1> <br>
+
+    <div class="student-id">
+        <strong>By student: 39736551</strong>
+    </div>
+
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
+    <button class="button" onclick="window.location.href='shop.html'">
+        <strong>Explore Products</strong>
+        <span></span>
+    </button>
+</div>
+
+
+
+
+   <!-- Animated video change section -->
+<script>
+const videos = [
+    "Images/index1.mp4",
+    "Images/index2.mp4",
+    "Images/index3.mp4"
+];
+
+const videoEls = document.querySelectorAll(".bgVideo");
+
+let index = 0;
+let active = 0;
+
+function changeVideo() {
+    const next = (active + 1) % 2;
+
+    videoEls[next].src = videos[index];
+    videoEls[next].load();
+    videoEls[next].play();
+
+    videoEls[next].classList.add("active");
+    videoEls[active].classList.remove("active");
+
+    active = next;
+    index = (index + 1) % videos.length;
+}
+
+changeVideo();
+setInterval(changeVideo, 4000);
+</script>
+
+</body>
+</html>
