@@ -82,6 +82,16 @@ const shippingForm = document.getElementById('shipping-form');
 if (shippingForm) {
     shippingForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        const shippingRadios = document.getElementsByName('method');
+        let shippingCost = 0;
+        shippingRadios.forEach(radio => {
+            if (radio.checked) {
+                shippingCost = parseFloat(radio.value);
+            }
+        });
+        localStorage.setItem('selectedShippingPrice', shippingCost);
+
         window.location.href = "payment.html";
     });
 }

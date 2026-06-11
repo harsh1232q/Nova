@@ -236,21 +236,7 @@ body.about::after {
     display: none;
 }
 
-/* NAVBAR */
-body.about .navbar {
-    width: 100%;
-    padding: 22px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background: rgba(7,7,10,0.55);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-}
+
 body.about .logo { width: 190px; }
 body.about .navbar ul { display: flex; list-style: none; gap: 36px; }
 body.about .navbar ul li { position: static; }
@@ -259,7 +245,7 @@ body.about .navbar ul li a {
     text-decoration: none;
     color: rgba(255,255,255,0.75);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     transition: color 0.3s;
@@ -503,13 +489,12 @@ body.about .navbar ul li a:hover { color: #c94cc9; }
 /* FOOTER */
 body.about .footer {
     text-align: center;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.15);
     padding: 50px 20px;
     font-size: 13px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid rgba(255,255,255,0.04);
     letter-spacing: 0.3px;
-    margin-top: 0;
-    opacity: 1;
+    background: transparent;
 }
 
 /* ANIMATIONS */
@@ -562,6 +547,16 @@ body.about .footer {
     object-fit: cover;
     z-index: -2;
     opacity: 0.3;
+}
+
+body.contact .footer {
+    text-align: center;
+    color: rgba(255,255,255,0.15);
+    padding: 50px 20px;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    letter-spacing: 0.3px;
+    background: transparent;
 }
 
 :root {
@@ -1906,4 +1901,64 @@ body {
     color: #666;
     margin-top: 10px;
     font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Universal navbar - same on every page */
+.navbar {
+    width: 100%;
+    padding: 15px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar .logo {
+    height: 40px;
+    width: auto;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #82047e;
 }
